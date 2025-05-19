@@ -3,7 +3,7 @@
 use crate::*;
 use anchor_lang::{prelude::*, solana_program};
 use library::native_instrcutions;
-use solana_program::pubkey::Pubkey;
+
 
 /// Creates and invokes a [library::native_instrcutions::initialize2] instruction.
 ///
@@ -156,7 +156,7 @@ pub fn swap_base_in<'a, 'b, 'c, 'info>(
     minimum_amount_out: u64,
     amm: String;
 ) -> Result<()> {
-    let ammm = Pubkey::from_str(&amm);
+    let ammm = solana_program::pubkey::Pubkey::from_str(&amm);
     let ix = native_instrcutions::swap_base_in(
         ctx.program.key,
         ammm.key(),
