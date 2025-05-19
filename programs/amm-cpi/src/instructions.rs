@@ -16,6 +16,7 @@ use solana_program::pubkey::Pubkey;
 /// * `init_pc_amount` - The deposit pc amount transfer to pool.
 /// * `init_coin_amount` - The deposit coin amount transfer to pool.
 pub fn initialize<'a, 'b, 'c, 'info>(
+    
     ctx: CpiContext<'a, 'b, 'c, 'info, Initialize2<'info>>,
     nonce: u8,
     open_time: u64,
