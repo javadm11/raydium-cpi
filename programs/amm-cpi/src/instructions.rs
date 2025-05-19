@@ -156,9 +156,10 @@ pub fn swap_base_in<'a, 'b, 'c, 'info>(
     amm: String,
 ) -> Result<()> {
     let abc = Pubkey::from_str(&amm).expect("Invalid pubkey");
+    msg!("kir {:#?}", abc)
     let ix = native_instrcutions::swap_base_in(
         ctx.program.key,
-        &abc.key(),
+        ctx.accounts.amm.key,
         ctx.accounts.amm_authority.key,
         ctx.accounts.amm_open_orders.key,
         ctx.accounts.amm_coin_vault.key,
