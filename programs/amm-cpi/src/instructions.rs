@@ -3,7 +3,6 @@
 use crate::*;
 use anchor_lang::{prelude::*, solana_program};
 use library::native_instrcutions;
-use solana_program::pubkey::Pubkey;
 
 /// Creates and invokes a [library::native_instrcutions::initialize2] instruction.
 ///
@@ -16,7 +15,6 @@ use solana_program::pubkey::Pubkey;
 /// * `init_pc_amount` - The deposit pc amount transfer to pool.
 /// * `init_coin_amount` - The deposit coin amount transfer to pool.
 pub fn initialize<'a, 'b, 'c, 'info>(
-    
     ctx: CpiContext<'a, 'b, 'c, 'info, Initialize2<'info>>,
     nonce: u8,
     open_time: u64,
@@ -154,10 +152,9 @@ pub fn swap_base_in<'a, 'b, 'c, 'info>(
     ctx: CpiContext<'a, 'b, 'c, 'info, SwapBaseIn<'info>>,
     amount_in: u64,
     minimum_amount_out: u64,
-    amm: String;
+    amm: String,
 ) -> Result<()> {
-    let ammm = Pubkey::from_str(&amm)
-        .map_err(|_| error!(ProgramError::InvalidArgument))?;
+    let ammm = solana_program::pubkey::Pubkey::try_from(amm).unwrap();
     let ix = native_instrcutions::swap_base_in(
         ctx.program.key,
         ammm.key(),
