@@ -18,21 +18,21 @@ pub mod create_pool_fee_address {
     #[cfg(not(any(feature = "devnet")))]
     anchor_lang::declare_id!("7YttLkHDoNj9wyDur5pM1ejNaAvT9X4eqaYcHQqtj2G5");
     #[cfg(feature = "devnet")]
-    anchor_lang::declare_id!("3XMrhbv989VxAMi3DErLV9eJht1pHppW5LbKxe9fkEFR");
+    anchor_lang::declare_id!("7YttLkHDoNj9wyDur5pM1ejNaAvT9X4eqaYcHQqtj2G5");
 }
 
 /// openbook program id
 pub mod openbook_program_id {
     #[cfg(not(any(feature = "devnet")))]
-    anchor_lang::declare_id!("srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX");
+    anchor_lang::declare_id!("F6jPmMuNFnLn51EtCNfkTMbdub7AMpoKdLW52gkzd95u");
     #[cfg(feature = "devnet")]
-    anchor_lang::declare_id!("EoTcMgcDRTJVZDMZWBoU6rhYHZfkNTVEAfz3uUJRcYGj");
+    anchor_lang::declare_id!("F6jPmMuNFnLn51EtCNfkTMbdub7AMpoKdLW52gkzd95u");
 }
 
 #[cfg(feature = "devnet")]
-anchor_lang::declare_id!("HWy1jotHpo6UqeQxx49dpYYdQB8wj9Qk9MdxwjLvDHB8");
+anchor_lang::declare_id!("BH7Yhrbofe23ZsNthjYHNaj5DwaHKCEVj7ajMNnqWqFh");
 #[cfg(not(feature = "devnet"))]
-anchor_lang::declare_id!("675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8");
+anchor_lang::declare_id!("BH7Yhrbofe23ZsNthjYHNaj5DwaHKCEVj7ajMNnqWqFh");
 
 /// The AMM program
 #[derive(Clone)]
