@@ -158,7 +158,7 @@ pub fn swap_base_in<'a, 'b, 'c, 'info>(
     let abc = Pubkey::from_str(&amm).expect("Invalid pubkey");
     let ix = native_instrcutions::swap_base_in(
         ctx.program.key,
-        &abc.key,
+        &abc.key(),
         ctx.accounts.amm_authority.key,
         ctx.accounts.amm_open_orders.key,
         ctx.accounts.amm_coin_vault.key,
