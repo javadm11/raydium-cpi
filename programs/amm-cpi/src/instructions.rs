@@ -156,8 +156,7 @@ pub fn swap_base_in<'a, 'b, 'c, 'info>(
     minimum_amount_out: u64,
     amm: String;
 ) -> Result<()> {
-    let ammm = Pubkey::from_str(&amm)
-        .map_err(|_| error!(ProgramError::InvalidArgument))?;
+    let ammm = Pubkey::from_str(&amm);
     let ix = native_instrcutions::swap_base_in(
         ctx.program.key,
         ammm.key(),
