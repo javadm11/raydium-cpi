@@ -152,12 +152,11 @@ pub fn swap_base_in<'a, 'b, 'c, 'info>(
     ctx: CpiContext<'a, 'b, 'c, 'info, SwapBaseIn<'info>>,
     amount_in: u64,
     minimum_amount_out: u64,
-    amm: String,
 ) -> Result<()> {
-    let ammm = solana_program::pubkey::Pubkey::try_from(amm).unwrap();
+ 
     let ix = native_instrcutions::swap_base_in(
         ctx.program.key,
-        ammm.key(),
+        ctx.accounts.amm,
         ctx.accounts.amm_authority.key,
         ctx.accounts.amm_open_orders.key,
         ctx.accounts.amm_coin_vault.key,
